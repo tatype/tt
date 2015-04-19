@@ -1,0 +1,60 @@
+@define-mixin type {
+}
+
+@define-mixin type:14pt {
+  font-size: 0.875rem;
+}
+@define-mixin type:16pt {
+  font-size: 1rem;
+}
+@define-mixin type:18pt {
+  font-size: 1.125rem;
+}
+@define-mixin type:20pt {
+  font-size: 1.25rem;
+}
+
+@define-mixin type:normal {
+  font-weight: 400;
+}
+@define-mixin type:medium {
+  font-weight: 500;
+}
+@define-mixin type:bold {
+  font-weight: 700;
+}
+@define-mixin type:small-caps {
+  font-variant: small-caps;
+}
+@define-mixin type:upcase {
+  text-transform: uppercase;
+}
+@define-mixin type:unbroken {
+  white-space: nowrap;
+}
+
+@define-mixin type:sans {
+  font-family: "Avenir Next", "Arial Black";
+}
+
+@define-mixin type:logo {
+  font-family: "Avenir Next", "Arial Black";
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+@define-mixin type:heading {
+  font-family: "Avenir Next", "Arial Black";
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+@define-mixin type:footer {
+  font-family: "Avenir Next", "Arial Black";
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}

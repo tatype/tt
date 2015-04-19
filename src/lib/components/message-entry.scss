@@ -1,0 +1,9 @@
+.MessageEntry {
+  > textarea {
+    @trait(color: recessed, layout: p0.5, type: 14pt);
+    height: 10rem;
+    width: 100%;
+    border: none;
+    resize: none;
+  }
+}

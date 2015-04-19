@@ -1,0 +1,15 @@
+.Output {
+  padding-top: 1rem;
+  @trait (flex-child: grow);
+  text-align: center;
+  overflow: hidden;
+  max-width: calc(100vw - 320px);
+  @media screen and (max-width: 600px) {
+    max-width: 100%;
+  }
+  canvas {
+    max-width: 100%;
+    height: auto !important;
+    display: inline-block;
+  }
+}
