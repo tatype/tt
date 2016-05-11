@@ -1,13 +1,103 @@
 <html>
     <head>
-        <title>tatype - A typefoundry with curiosity</title>
+        <title>TATYPE - A typefoundry with curiosity</title>
         <style>
-        div.wrapper{height:100%;padding:5% 0;}
-        img.center{display:block;margin-left:auto;margin-right:auto;}
-        #header-image{padding:10% 0;}
+        body {
+  margin: 0;
+  background: #000; 
+}
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ background: url('Snapshots/Analog-Typing.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .5;
+}
+
+#tatype { 
+  font-family: sans-serif;
+  font-weight:100; 
+  color: black;
+  width: 30%;
+  margin:10px auto;
+  font-size: 1.2rem;
+}
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .1rem;
+  transition: .6s background; 
+}
+a:hover{
+  background:rgba(0,0,0,0.9);
+}
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(Snapshots/Analog-Typing.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
         </style>
+        <script>
+        var vid = document.getElementById("bgvid");
+        var pauseButton = document.querySelector("#polina button");
+
+        function vidFade() {
+          vid.classList.add("stopfade");
+        }
+
+        vid.addEventListener('ended', function()
+        {
+        // only functional if "loop" is removed 
+        vid.pause();
+        // to capture IE10
+        vidFade();
+        }); 
+
+
+        pauseButton.addEventListener("click", function() {
+          vid.classList.toggle("stopfade");
+          if (vid.paused) {
+            vid.play();
+            pauseButton.innerHTML = "Pause";
+          } else {
+            vid.pause();
+            pauseButton.innerHTML = "Paused";
+          }
+        })
+        </script>
     </head>
     <body>
-        <img class="center" id="header-image" src="tatype.svg" alt="Source Foundry" width="500">
+        <video autoplay  poster="Snapshots/Analog-Typing.jpg" id="bgvid" loop>
+
+<source src="WEBM/Analog-Typing.webm" type="video/webm">
+<source src="MP4/Analog-Typing.mp4" type="video/mp4">
+</video>
+<div id="tatype">
+<p><center>We design typefaces and develop fonts in multi scripts with love and passion. Curiosity is what makes everything. A design and type foundry by <a href="http://thariqueazeez.com">Tharique Azeez</a>.</center></p>
+<h1><img class="center" id="header-image" src="tatype.svg" alt="tatype" width="400"></h1>
+
+</div>
+        
     </body>
 </html>
